@@ -1,0 +1,4 @@
+baseURL = "https://example.com/"
+languageCode = "ja"
+title = "AIブログ"
+theme = "ananke"
