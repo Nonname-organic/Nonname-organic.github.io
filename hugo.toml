@@ -1,4 +1,45 @@
-baseURL = "https://example.com/"
+baseURL = "https://nonname-organic.github.io/"
 languageCode = "ja"
 title = "AIブログ"
-theme = "ananke"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  description = "AIで副業収益を自動化する情報メディア"
+  author = "名もなき有機物"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+    Title = "AIで副業収益を自動化する"
+    Content = "最新AIツール・自動化パイプライン・収益化戦略を実践ベースで解説"
+
+  [[params.socialIcons]]
+    name = "youtube"
+    url = "https://youtube.com/yourchannel"
+
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://x.com/yourhandle"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    name = "記事一覧"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "AIツール"
+    url = "/tags/ツール/"
+    weight = 2
+  [[menu.main]]
+    name = "フェーズ解説"
+    url = "/tags/フェーズ/"
+    weight = 3

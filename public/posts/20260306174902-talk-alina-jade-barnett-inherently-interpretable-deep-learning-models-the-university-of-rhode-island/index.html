@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>AIブログ</title>
+<meta name="keywords" content="">
+<meta name="description" content="[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models
+導入
+Deep learning models have revolutionized the field of artificial intelligence, enabling machines to learn and improve from data with unprecedented accuracy. However, as these models become increasingly sophisticated, their interpretability – the ability to understand why they make certain decisions – has become a pressing concern. Inherently interpretable deep learning models are a critical step towards ensuring the transparency and accountability of AI systems. In this article, we will delve into the latest research on this topic, presented by Alina Jade Barnett, a renowned expert in the field.">
+<meta name="author" content="名もなき有機物">
+<link rel="canonical" href="https://nonname-organic.github.io/posts/20260306174902-talk-alina-jade-barnett-inherently-interpretable-deep-learning-models-the-university-of-rhode-island/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b26733ed34c10748cb5a55bab18e1a9466a0b8b2fdb4f79e3377e435fcdac880.css" integrity="sha256-smcz7TTBB0jLWlW6sY4alGaguLL9tPeeM3fkNfzayIA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://nonname-organic.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nonname-organic.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nonname-organic.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nonname-organic.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nonname-organic.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://nonname-organic.github.io/posts/20260306174902-talk-alina-jade-barnett-inherently-interpretable-deep-learning-models-the-university-of-rhode-island/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://nonname-organic.github.io/posts/20260306174902-talk-alina-jade-barnett-inherently-interpretable-deep-learning-models-the-university-of-rhode-island/">
+  <meta property="og:site_name" content="AIブログ">
+  <meta property="og:title" content="AIブログ">
+  <meta property="og:description" content="[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models 導入
+Deep learning models have revolutionized the field of artificial intelligence, enabling machines to learn and improve from data with unprecedented accuracy. However, as these models become increasingly sophisticated, their interpretability – the ability to understand why they make certain decisions – has become a pressing concern. Inherently interpretable deep learning models are a critical step towards ensuring the transparency and accountability of AI systems. In this article, we will delve into the latest research on this topic, presented by Alina Jade Barnett, a renowned expert in the field.">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models
+導入
+Deep learning models have revolutionized the field of artificial intelligence, enabling machines to learn and improve from data with unprecedented accuracy. However, as these models become increasingly sophisticated, their interpretability – the ability to understand why they make certain decisions – has become a pressing concern. Inherently interpretable deep learning models are a critical step towards ensuring the transparency and accountability of AI systems. In this article, we will delve into the latest research on this topic, presented by Alina Jade Barnett, a renowned expert in the field.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://nonname-organic.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "https://nonname-organic.github.io/posts/20260306174902-talk-alina-jade-barnett-inherently-interpretable-deep-learning-models-the-university-of-rhode-island/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models 導入\nDeep learning models have revolutionized the field of artificial intelligence, enabling machines to learn and improve from data with unprecedented accuracy. However, as these models become increasingly sophisticated, their interpretability – the ability to understand why they make certain decisions – has become a pressing concern. Inherently interpretable deep learning models are a critical step towards ensuring the transparency and accountability of AI systems. In this article, we will delve into the latest research on this topic, presented by Alina Jade Barnett, a renowned expert in the field.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models 導入\nDeep learning models have revolutionized the field of artificial intelligence, enabling machines to learn and improve from data with unprecedented accuracy. However, as these models become increasingly sophisticated, their interpretability – the ability to understand why they make certain decisions – has become a pressing concern. Inherently interpretable deep learning models are a critical step towards ensuring the transparency and accountability of AI systems. In this article, we will delve into the latest research on this topic, presented by Alina Jade Barnett, a renowned expert in the field.\n背景問題点 In recent years, deep learning models have been deployed in a wide range of applications, from self-driving cars to medical diagnosis. While these models have achieved impressive results, their lack of interpretability has raised concerns about their fairness, accountability, and reliability. For instance, a study by the National Academy of Sciences found that AI systems are more likely to perpetuate biases present in the training data, leading to discriminatory outcomes. Moreover, the opacity of these models makes it difficult to identify and correct errors, which can have serious consequences in high-stakes applications.\n現在の影響 The lack of interpretability in deep learning models has significant implications for individuals and society as a whole. For instance, a study by the Harvard Business Review found that 75% of executives believe that AI systems are not transparent enough, leading to a loss of trust in these systems. Furthermore, the opacity of AI systems can lead to a lack of accountability, as it is difficult to identify and correct errors. This can have serious consequences for individuals and society, particularly in applications such as healthcare and finance.\n今後の展望専門家の意見 To address the lack of interpretability in deep learning models, researchers and developers are exploring a range of approaches, from explainable AI to feature attribution methods. According to Alina Jade Barnett, “Inherently interpretable deep learning models are not only possible but also essential for building trust in AI systems.” Experts agree that developing more interpretable AI systems is critical for ensuring the transparency and accountability of these systems.\nまとめ In conclusion, the lack of interpretability in deep learning models is a pressing concern that must be addressed. Developing inherently interpretable deep learning models is critical for ensuring the transparency and accountability of AI systems. We must work towards building trust in AI systems by making them more interpretable and transparent.\n",
+  "wordCount" : "401",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "名もなき有機物"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nonname-organic.github.io/posts/20260306174902-talk-alina-jade-barnett-inherently-interpretable-deep-learning-models-the-university-of-rhode-island/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AIブログ",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://nonname-organic.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://nonname-organic.github.io/" accesskey="h" title="AIブログ (Alt + H)">AIブログ</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://nonname-organic.github.io/posts/" title="記事一覧">
+                    <span>記事一覧</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nonname-organic.github.io/tags/%E3%83%84%E3%83%BC%E3%83%AB/" title="AIツール">
+                    <span>AIツール</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://nonname-organic.github.io/tags/%E3%83%95%E3%82%A7%E3%83%BC%E3%82%BA/" title="フェーズ解説">
+                    <span>フェーズ解説</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://nonname-organic.github.io/">ホーム</a>&nbsp;»&nbsp;<a href="https://nonname-organic.github.io/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta"><span>2 分</span>&nbsp;·&nbsp;<span>名もなき有機物</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目次</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#heading" aria-label="[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models">[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models</a></li>
+                <li>
+                    <a href="#%e8%83%8c%e6%99%af%e5%95%8f%e9%a1%8c%e7%82%b9" aria-label="背景問題点">背景問題点</a></li>
+                <li>
+                    <a href="#%e7%8f%be%e5%9c%a8%e3%81%ae%e5%bd%b1%e9%9f%bf" aria-label="現在の影響">現在の影響</a></li>
+                <li>
+                    <a href="#%e4%bb%8a%e5%be%8c%e3%81%ae%e5%b1%95%e6%9c%9b%e5%b0%82%e9%96%80%e5%ae%b6%e3%81%ae%e6%84%8f%e8%a6%8b" aria-label="今後の展望専門家の意見">今後の展望専門家の意見</a></li>
+                <li>
+                    <a href="#%e3%81%be%e3%81%a8%e3%82%81" aria-label="まとめ">まとめ</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="heading"><strong>[Talk] Alina Jade Barnett: Inherently Interpretable Deep Learning Models</strong><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h1>
+<p><strong>導入</strong></p>
+<p>Deep learning models have revolutionized the field of artificial intelligence, enabling machines to learn and improve from data with unprecedented accuracy. However, as these models become increasingly sophisticated, their interpretability – the ability to understand why they make certain decisions – has become a pressing concern. Inherently interpretable deep learning models are a critical step towards ensuring the transparency and accountability of AI systems. In this article, we will delve into the latest research on this topic, presented by Alina Jade Barnett, a renowned expert in the field.</p>
+<h1 id="背景問題点"><strong>背景問題点</strong><a hidden class="anchor" aria-hidden="true" href="#背景問題点">#</a></h1>
+<p>In recent years, deep learning models have been deployed in a wide range of applications, from self-driving cars to medical diagnosis. While these models have achieved impressive results, their lack of interpretability has raised concerns about their fairness, accountability, and reliability. For instance, a study by the National Academy of Sciences found that AI systems are more likely to perpetuate biases present in the training data, leading to discriminatory outcomes. Moreover, the opacity of these models makes it difficult to identify and correct errors, which can have serious consequences in high-stakes applications.</p>
+<h1 id="現在の影響"><strong>現在の影響</strong><a hidden class="anchor" aria-hidden="true" href="#現在の影響">#</a></h1>
+<p>The lack of interpretability in deep learning models has significant implications for individuals and society as a whole. For instance, a study by the Harvard Business Review found that 75% of executives believe that AI systems are not transparent enough, leading to a loss of trust in these systems. Furthermore, the opacity of AI systems can lead to a lack of accountability, as it is difficult to identify and correct errors. This can have serious consequences for individuals and society, particularly in applications such as healthcare and finance.</p>
+<h1 id="今後の展望専門家の意見"><strong>今後の展望専門家の意見</strong><a hidden class="anchor" aria-hidden="true" href="#今後の展望専門家の意見">#</a></h1>
+<p>To address the lack of interpretability in deep learning models, researchers and developers are exploring a range of approaches, from explainable AI to feature attribution methods. According to Alina Jade Barnett, &ldquo;Inherently interpretable deep learning models are not only possible but also essential for building trust in AI systems.&rdquo; Experts agree that developing more interpretable AI systems is critical for ensuring the transparency and accountability of these systems.</p>
+<h1 id="まとめ"><strong>まとめ</strong><a hidden class="anchor" aria-hidden="true" href="#まとめ">#</a></h1>
+<p>In conclusion, the lack of interpretability in deep learning models is a pressing concern that must be addressed. Developing inherently interpretable deep learning models is critical for ensuring the transparency and accountability of AI systems. We must work towards building trust in AI systems by making them more interpretable and transparent.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://nonname-organic.github.io/posts/20260306174852-identifying-potential-drug-candidates-with-deep-learning-virtual-screening-phys-org/">
+    <span class="title">« 前へ</span>
+    <br>
+    <span></span>
+  </a>
+  <a class="next" href="https://nonname-organic.github.io/posts/20260306174922-trump-says-he-fired-anthropic-like-dogs-as-pentagon-formally-blacklists-ai-startup-the-guardian/">
+    <span class="title">次へ »</span>
+    <br>
+    <span></span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://nonname-organic.github.io/">AIブログ</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'コピー';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'コピーされました!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'コピー';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

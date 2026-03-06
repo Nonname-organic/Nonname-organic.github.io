@@ -1,0 +1,62 @@
+/* ===========================
+   AI収益化Lab — カスタムスタイル
+   =========================== */
+
+:root {
+  --accent: #00e5a0;
+  --accent2: #7b61ff;
+}
+
+/* ダークモード強制適用 */
+body {
+  background: #0a0a0f !important;
+  font-family: 'Noto Sans JP', sans-serif !important;
+}
+
+/* Google Fonts 読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* ヘッダーロゴ */
+.logo a {
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+/* 記事カード */
+.post-entry {
+  border: 1px solid #ffffff12;
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+  background: #111118;
+}
+
+.post-entry:hover {
+  border-color: rgba(0, 229, 160, 0.3);
+  transform: translateY(-2px);
+}
+
+/* タグ */
+.post-tags a {
+  background: rgba(0, 229, 160, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(0, 229, 160, 0.2);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+}
+
+/* 記事タイトル */
+h1.post-title {
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* アクセントカラー */
+a { color: var(--accent); }
+
+/* コードブロック */
+.highlight {
+  border: 1px solid #ffffff12;
+  border-radius: 4px;
+}
